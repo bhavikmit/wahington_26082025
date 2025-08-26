@@ -18,8 +18,10 @@ namespace Models
         public DateTime InstalledDate { get; set; }
         public DateTime? ReplacementDate { get; set; }
         public DateTime? NextMaintenanceDate { get; set; }
+        public DateTime? LastServiceDate { get; set; }
         public ReplacementCycleCatalog? ReplacementYear { get; set; }
         public MaintenanceCycleCatalog? NextMaintenanceYear { get; set; }
+        public AssetLastServiceDate? LastServiceYear { get; set; }
 
         [ForeignKey("AssetType")]
         public long? AssetTypeId { get; set; }
