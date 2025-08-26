@@ -36,6 +36,24 @@
                     <partial name="~/Views/Shared/Select2/_Condition.cshtml" for="Condition" />
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label class="form-label fw-600">Status</label>
+                    <select class="form-select">
+                        <option>Active</option>
+                        <option>Inactive</option>
+                        <option>Repair</option>
+                        <option>Retired</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label class="form-label fw-600">Modal</label>
+                    <input type="text" class="form-control" value="Model-Pip-1" />
+                </div>
+            </div>
 
             <div class="col-lg-6">
                 <div class="mb-3 form-group">
@@ -88,6 +106,36 @@
                         <option value="">-- Select --</option>
                     </select>
                     <span asp-validation-for="NextMaintenanceYear" class="validation-invalid-label"></span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label class="form-label fw-600">Last Service Date</label>
+                    <select class="form-select">
+                        <option>1 years</option>
+                        <option>2 years</option>
+                        <option>5 years</option>
+                        <option>10 years</option>
+                        <option>15 years</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label class="form-label fw-600">Critically</label>
+                    <select class="form-select">
+                        <option>High</option>
+                        <option>Low</option>
+                        <option>Medium</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label class="form-label fw-600">Owner</label>
+                    <input type="text" class="form-control" value="Engineering" />
                 </div>
             </div>
 
