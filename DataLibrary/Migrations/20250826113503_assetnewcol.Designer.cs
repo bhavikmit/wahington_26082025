@@ -4,6 +4,7 @@ using DataLibrary;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataLibrary.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250826113503_assetnewcol")]
+    partial class assetnewcol
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1890,12 +1893,6 @@ namespace DataLibrary.Migrations
                     b.Property<int>("ActiveStatus")
                         .HasColumnType("int");
 
-                    b.Property<string>("AssignedCrew")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AssignedTechnicians")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("CallMe")
                         .HasColumnType("bit");
 
@@ -1915,9 +1912,6 @@ namespace DataLibrary.Migrations
                     b.Property<string>("DescriptionOfProblem")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DispatchStatusId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("Drainage")
                         .HasColumnType("bit");
 
@@ -1926,12 +1920,6 @@ namespace DataLibrary.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("EmailMe")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("EvacuationNeeded")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("GasOdorDetected")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsDeleted")
@@ -1960,12 +1948,6 @@ namespace DataLibrary.Migrations
                     b.Property<bool>("Potholes")
                         .HasColumnType("bit");
 
-                    b.Property<string>("RegulatoryStepCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RespondersNotified")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("SideWalk")
                         .HasColumnType("bit");
 
@@ -1985,9 +1967,6 @@ namespace DataLibrary.Migrations
 
                     b.Property<string>("Subject")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SupervisorName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("UpdatedBy")
