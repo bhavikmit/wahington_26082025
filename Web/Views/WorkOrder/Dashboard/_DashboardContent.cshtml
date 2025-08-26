@@ -20,6 +20,20 @@
         background-color: rgba(0, 0, 0, 0.05);
         min-height: 100px;
     }
+
+    .info h6{
+        font-size:16px;
+        font-weight:400;
+    }
+
+    .Infocard{
+        padding:0;
+    }
+
+    .info i.fa{
+        color:#f54e00;
+        margin-right:8px;
+    }
 </style>
 
 <div class="desk_wrap">
@@ -52,6 +66,17 @@
                                                 @workOrder.FormattedTitle
                                             </div>
                                             <span class="card_description text-muted f-14">@workOrder.Description</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body Infocard">
+                                        <div class="workStep info">
+                                            <h6><i class="fa fa-building"></i>Maintenance</h6>
+                                        </div>
+                                        <div class="assetType info">
+                                            <h6><i class="fa fa-crosshairs"></i>Traffic Signals</h6>
+                                        </div>
+                                        <div class="hours info">
+                                            <h6><i class="fa fa-clock"></i>5 Hours</h6>
                                         </div>
                                     </div>
                                     <div class="card_footer">

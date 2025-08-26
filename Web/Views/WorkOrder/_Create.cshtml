@@ -122,6 +122,11 @@
                         <span asp-validation-for="DueDate" class="validation-invalid-label"></span>
                     </div>
                 </div>
+                <div id="replace-select" class="col-lg-6">
+                    <div class="mb-3 form-group">
+                        <partial name="~/Views/Shared/Select2/_TaskType.cshtml" for="TaskType" />
+                    </div>
+                </div>
                 <div class="col-lg-6">
                     <div class="mb-3 form-group">
                         <label asp-for="Task" class="form-label fw-600"></label>
@@ -132,11 +137,26 @@
                         <span asp-validation-for="Task" class="validation-invalid-label"></span>
                     </div>
                 </div>
-
-
-                <div id="replace-select" class="col-lg-6">
+                <div class="col-lg-6">
                     <div class="mb-3 form-group">
-                        <partial name="~/Views/Shared/Select2/_TaskType.cshtml" for="TaskType" />
+                        <label class="form-label fw-600">Cost Center</label>
+                        <select class="form-select">
+                            <option>CC0231</option>
+                            <option>CC20356</option>
+                            <option>CC65477</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mb-3 form-group">
+                        <label class="form-label fw-600">Approver</label>
+                        <select class="form-select">
+                            <option>Bryan Young</option>
+                            <option>Joseph Tosta</option>
+                            <option>Phil Wallace</option>
+                        </select>
+
                     </div>
                 </div>
                 @await Html.PartialAsync("~/Views/WorkOrderCustomFields/_ShowDynamicColumns.cshtml", Model)
@@ -171,10 +191,10 @@
 
         <div class="col-md-12 mt-3">
             <div class="form-group technician-container row">
-                <span class="col-md-3">
+                @* <span class="col-md-3">
                     <label class="form-label fw-600">Technician<span style="color:red"> *</span></label>
                     @await Html.PartialAsync("~/Views/Shared/Select2/_Technician.cshtml", new TechnicianBriefViewModel(), "Technician", new ViewDataDictionary(ViewData) { { "HideLabel", true } })
-                </span>
+                </span> *@
                 <span class="col-md-3">
                     <label class="form-label fw-600">Craft Skill<span style="color:red"> *</span></label>
                     @await Html.PartialAsync("~/Views/Shared/Select2/_CraftSkill.cshtml", new CraftSkillBriefViewModel(), "CraftSkill", new ViewDataDictionary(ViewData) { { "HideLabel", true }, { "Id", "craftskill-id" } })
