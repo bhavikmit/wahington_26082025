@@ -65,8 +65,10 @@ namespace Web.Controllers
             var columns = new List<DataTableViewModel>()
             {
                 //new DataTableViewModel{title = "", data = "Id",format="expand",className="action dt-control expand exclude-form-export"},
+                 
                 new DataTableViewModel{title = "Condition",data = "Condition.Name", orderable = true,filterId="condition-search-container",hasFilter=true, format="html",formatValue="status", isEditable = true, editableColumnDetail = new EditableCellDetails("Asset", "ConditionId","ConditionId","Condition.Id", "hidden-asset-create-form",false,"Id",new List<(string,string)>{("Select2SelectedId","Condition.Id"),("Select2SelectedValue","Condition.Name")})  },
                 new DataTableViewModel{title = "ID #",data = "SystemGeneratedId", orderable = true },
+                new DataTableViewModel{title = "Barcode",data = "/img/Barcode.png", format = "html", formatValue="barcodeImg", className = "image-thumbnail action"},
                 new DataTableViewModel{title = "Asset Type",data = "AssetType.Name",orderable = true,filterId="asset-type-search-container", hasFilter = true, isEditable = true, editableColumnDetail = new EditableCellDetails("Asset", "AssetTypeId","AssetTypeId","AssetType.Id", "hidden-asset-create-form",false,"Id",new List<(string,string)>{("Select2SelectedId","AssetType.Id"),("Select2SelectedValue", "AssetType.Name") })  },
                 //new DataTableViewModel{title = "Asset ID",data = "SystemGeneratedId", isEditable = true, editableColumnDetail = new EditableCellDetails("Asset", "AssetId","AssetId","AssetId", "hidden-asset-create-form",false) },
                 //new DataTableViewModel{title = "Pole ID",data = "PoleId", isEditable = true, editableColumnDetail = new EditableCellDetails("Asset", "PoleId","PoleId","PoleId", "hidden-asset-create-form",false) },

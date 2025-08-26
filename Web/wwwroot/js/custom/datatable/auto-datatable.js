@@ -847,6 +847,9 @@
         else if (dtColumns[meta.col].formatValue === "barcode") {
             return '<span data-barcode="' + data + '"><i class="fa fa-barcode"></i></span>';
         }
+        else if (dtColumns[meta.col].formatValue === "barcodeImg") {
+            return '<img src="/img/Barcode.png" alt="barcode" class="barcodeImg">';
+        }
         else if (dtColumns[meta.col].formatValue === "detail") {
             return '<span class="details-control" data-url="' + dtColumns[meta.col].detailUrl + '">' + (data === undefined ? "" : data) + '</span>';
         }

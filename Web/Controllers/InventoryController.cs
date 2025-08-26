@@ -32,7 +32,12 @@ namespace Web.Controllers
             {
                 new DataTableViewModel{title = "<input type='checkbox' class='select-all-checkbox' onclick='selectAllCheckBoxChanged(this)'>",className="select-all-checkbox action text-right exclude-from-export", data = "Id"},
                 new DataTableViewModel{title = "", data = "Id",format="expand",className="action dt-control expand exclude-form-export"},
-                new DataTableViewModel{title = "Inventory #",data = "FormattedSystemGeneratedId", orderable = true, sortingColumn = "SystemGeneratedId"},
+
+                new DataTableViewModel{title = "Barcode",data = "/img/Barcode.png", format = "html", formatValue="barcodeImg", className = "image-thumbnail action"},
+
+                new DataTableViewModel{title = "Image",data = "ImageUrl", format = "html", formatValue="image", className = "image-thumbnail action"},
+
+                //new DataTableViewModel{title = "Inventory #",data = "FormattedSystemGeneratedId", orderable = true, sortingColumn = "SystemGeneratedId"},
                 new DataTableViewModel{title = "Item #",data = "ItemNo", orderable = true},
                 new DataTableViewModel{title = "Category",data = "Category.Name", orderable = true, filterId="categoryId", hasFilter = true},
                 new DataTableViewModel{title = "Description",data = "FormattedDescription", orderable = true},
