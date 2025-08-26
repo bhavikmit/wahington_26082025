@@ -16,7 +16,7 @@ namespace ViewModels
         [Display(Name = "Pole Id", Prompt = "Pole Id")]
         public string? PoleId { get; set; }
         [Display(Prompt = "Description")]
-        public string Description { get; set; }
+        public string Description { get; set; } = default!;
         [Display(Name = "Class", Prompt = "Class")]
         public string? AssetClass { get; set; }
         [Display(Prompt = "Value")]
@@ -24,7 +24,7 @@ namespace ViewModels
         [Display(Name = "Maintenance Cost", Prompt = "Maintenance Cost")]
         public double MaintenanceCost { get; set; }
         [Display(Name = "Street", Prompt = "Street")]
-        public string Intersection { get; set; }
+        public string Intersection { get; set; } = default!;
         [Display(Prompt = "Latitude")]
         public double Latitude { get; set; }
         [Display(Prompt = "Longitude")]
@@ -53,24 +53,24 @@ namespace ViewModels
         public List<AssetTypeLevel1DetailViewModel> AssetTypeRadioButtonList { get; set; } = new();
         public List<DynamicColumnValueDetailViewModel> DynamicColumns { get; set; } = new();
 
-        [Display(Name = "Status", Prompt = "Asset Status")]
-        public AssetStatus? AssetStatus { get; set; }
+        [Display(Name = "Status")]
+        public AssetStatus AssetStatus { get; set; }
 
-        [Display(Name = "Criticality", Prompt = "Asset Criticality")]
-        public AssetCriticality? AssetCriticality { get; set; }
+        [Display(Name = "Criticality")]
+        public AssetCriticality AssetCriticality { get; set; }
 
-        [Display(Name = "Asset Owner", Prompt = "Asset Owner")]
-        public AssetOwner? AssetOwner { get; set; }
+        [Display(Name = "Owner")]
+        public AssetOwner AssetOwner { get; set; }
 
-        [Display(Name = "Asset Cost Center", Prompt = "Asset Cost Center")]
-        public AssetCostCenter? AssetCostCenter { get; set; }
+        [Display(Name = "Cost Center")]
+        public AssetCostCenter AssetCostCenter { get; set; }
 
-        public string? Model { get; set; }
+        public string Model { get; set; } = default!;
 
-        [Display(Name = "Serial Number", Prompt = "Serial Number")]
-        public string? SerialNumber { get; set; }
+        [Display(Name = "Serial Number")]
+        public string SerialNumber { get; set; } = default!;
 
-        [Display(Name = "Asset Last Service Date", Prompt = "Asset Last Service Date")]
-        public AssetLastServiceDate? AssetLastServiceDate { get; set; }
+        [Display(Name = "Last Service Date")]
+        public AssetLastServiceDate AssetLastServiceDate { get; set; }
     }
 }

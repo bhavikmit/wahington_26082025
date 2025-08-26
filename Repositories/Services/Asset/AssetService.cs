@@ -149,6 +149,7 @@ namespace Repositories.Common
                 mappedModel.SystemGeneratedId = "AST-" + (totalAssetCount + 1).ToString("D4");
                 mappedModel.ReplacementDate = mappedModel.InstalledDate.AddYears((int)mappedModel.ReplacementYear);
                 mappedModel.NextMaintenanceDate = mappedModel.InstalledDate.AddYears((int)mappedModel.NextMaintenanceYear);
+                mappedModel.LastServiceDate = mappedModel.InstalledDate.AddYears((int)mappedModel.LastServiceYear);
                 await _db.AddAsync(mappedModel);
                 await _db.SaveChangesAsync();
                 model.Id = mappedModel.Id;
