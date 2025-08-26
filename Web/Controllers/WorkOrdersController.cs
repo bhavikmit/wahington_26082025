@@ -43,7 +43,7 @@ namespace Web.Controllers
                     new TabItemViewModel()
                     {
                         Id="service-request",
-                        Name="Public Service Request",
+                        Name="Service Request",
                         Url="/StreetServiceRequest/Index"
                     }
                 }

@@ -1,9 +1,38 @@
 ﻿@using Enums
-@using ViewModels;
+@using ViewModels
 @model StreetServiceRequestModifyViewModel
 @{
     Layout = null;
 }
+<style>
+    .row.safetyPoint label {
+        font-size: 21px;
+        font-weight: 400;
+        margin-bottom: 19px;
+    }
+
+    .row.safetyPoint input[type="radio"] {
+        width: 24px;
+        height: 24px;
+        margin-right: 6px;
+        vertical-align: bottom;
+    }
+
+    .row.safetyPoint .form-group {
+        font-size: 22px;
+        margin-bottom: 30px !important;
+    }
+
+    .row.assigment .form-group label {
+        font-size: 21px;
+        font-weight: 400;
+        margin-bottom: 17px;
+    }
+
+    .row.assigment .form-group {
+        margin-bottom: 30px !important;
+    }
+</style>
 <div class="row">
     <div class="col-lg-12">
         <div class="row">
@@ -64,75 +93,54 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="mb-3 form-group">
-                    <input asp-for="CallMe" data-val-ignore="true" id="CallMe" data-val="false" type="checkbox" style="width:40px;" height="40px;" />
-                    <label class="form-label"> Please call me</label>
-                    <span asp-validation-for="CallMe" class="validation-invalid-label"></span>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="mb-3 form-group">
-                    <input asp-for="EmailMe" data-val-ignore="true" id="EmailMe" type="checkbox" style="width:40px;" height="40px;" />
-                    <label asp-for="EmailMe" class="form-label"></label>
-                    <span asp-validation-for="EmailMe" class="validation-invalid-label"></span>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="mb-3 form-group">
-                    <input asp-for="NoNeedToContact" data-val-ignore="true" id="NoNeedToContact" type="checkbox" style="width:40px;" height="40px;" />
-                    <label asp-for="NoNeedToContact" class="form-label"></label>
-                    <span asp-validation-for="NoNeedToContact" class="validation-invalid-label"></span>
-                </div>
-            </div>
-        </div>
+
+        <!-- Existing Problem Section -->
         <div class="row">
             <label class="form-label fw-600 mb-3">Type of problem:</label>
 
             <div class="col-lg-6">
                 <div class="mb-3 form-group">
-                    <input asp-for="SideWalk" data-val-ignore="true" id="SideWalk" type="checkbox" style="width:40px;" height="40px;" />
+                    <input asp-for="SideWalk" id="SideWalk" type="checkbox" style="width:20px;height:20px;" />
                     <label asp-for="SideWalk" class="form-label"></label>
                     <span asp-validation-for="SideWalk" class="validation-invalid-label"></span>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="mb-3 form-group">
-                    <input asp-for="Potholes" data-val-ignore="true" id="Potholes" type="checkbox" style="width:40px;" height="40px;" />
+                    <input asp-for="Potholes" id="Potholes" type="checkbox" style="width:20px;height:20px;" />
                     <label asp-for="Potholes" class="form-label"></label>
                     <span asp-validation-for="Potholes" class="validation-invalid-label"></span>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="mb-3 form-group">
-                    <input asp-for="Drainage" data-val-ignore="true" id="Drainage" type="checkbox" style="width:40px;" height="40px;" />
+                    <input asp-for="Drainage" id="Drainage" type="checkbox" style="width:20px;height:20px;" />
                     <label asp-for="Drainage" class="form-label"></label>
                     <span asp-validation-for="Drainage" class="validation-invalid-label"></span>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="mb-3 form-group">
-                    <input asp-for="StreetSweeping" data-val-ignore="true" id="StreetSweeping" type="checkbox" style="width:40px;" height="40px;" />
+                    <input asp-for="StreetSweeping" id="StreetSweeping" type="checkbox" style="width:20px;height:20px;" />
                     <label asp-for="StreetSweeping" class="form-label"></label>
                     <span asp-validation-for="StreetSweeping" class="validation-invalid-label"></span>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="mb-3 form-group">
-                    <input asp-for="ParkwayTree" data-val-ignore="true" id="ParkwayTree" type="checkbox" style="width:40px;" height="40px;" />
+                    <input asp-for="ParkwayTree" id="ParkwayTree" type="checkbox" style="width:20px;height:20px;" />
                     <label asp-for="ParkwayTree" class="form-label"></label>
                     <span asp-validation-for="ParkwayTree" class="validation-invalid-label"></span>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="mb-3 form-group">
-                    <input asp-for="Other" data-val-ignore="true" id="Other" type="checkbox" style="width:40px;" height="40px;" />
+                    <input asp-for="Other" id="Other" type="checkbox" style="width:20px;height:20px;" />
                     <label asp-for="Other" class="form-label"></label>
                     <span asp-validation-for="Other" class="validation-invalid-label"></span>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="mb-3 form-group">
                     <label asp-for="Description" class="form-label fw-600"></label>
                     <textarea asp-for="Description" class="form-control"></textarea>
@@ -140,22 +148,128 @@
                 </div>
             </div>
         </div>
-      @*   <div class="row">
+
+        <!-- New Section: Safety / Regulatory -->
+        <hr />
+        <div class="row safetyPoint">
             <div class="col-lg-12">
+                <h5 class="fw-600 mb-3">Safety / Regulatory</h5>
+            </div>
+
+            <div class="col-lg-6">
                 <div class="mb-3 form-group">
-                    <label asp-for="LocationOfProblem" class="form-label fw-600"></label>
-                    <textarea asp-for="LocationOfProblem" class="form-control"></textarea>
-                    <span asp-validation-for="LocationOfProblem" class="validation-invalid-label"></span>
+                    <label class="form-label">Gas Odor Detected?</label><br />
+                    <input asp-for="GasOdorDetected" type="radio" value="true" /> Yes
+                    <input asp-for="GasOdorDetected" type="radio" value="false" /> No
+                    <span asp-validation-for="GasOdorDetected" class="validation-invalid-label"></span>
                 </div>
             </div>
-            <div class="col-lg-12">
+
+            <div class="col-lg-6">
                 <div class="mb-3 form-group">
-                    <label asp-for="DescriptionOfProblem" class="form-label fw-600"></label>
-                    <textarea asp-for="DescriptionOfProblem" class="form-control"></textarea>
-                    <span asp-validation-for="DescriptionOfProblem" class="validation-invalid-label"></span>
+                    <label class="form-label">Evacuation Needed?</label><br />
+                    <input asp-for="EvacuationNeeded" type="radio" value="true" /> Yes
+                    <input asp-for="EvacuationNeeded" type="radio" value="false" /> No
+                    <span asp-validation-for="EvacuationNeeded" class="validation-invalid-label"></span>
                 </div>
             </div>
-        </div> *@
+
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label class="form-label">Emergency Responders Notified?</label><br />
+                    <input asp-for="RespondersNotified" type="radio" value="Yes" /> Yes
+                    <input asp-for="RespondersNotified" type="radio" value="No" /> No
+                    <input asp-for="RespondersNotified" type="radio" value="NA" /> N/A
+                    <span asp-validation-for="RespondersNotified" class="validation-invalid-label"></span>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label asp-for="RegulatoryStepCode" class="form-label fw-600">Regulatory Step/Policy Code</label>
+                    <input asp-for="RegulatoryStepCode" type="text" class="form-control" placeholder="Leak repair procedure" />
+                    <span asp-validation-for="RegulatoryStepCode" class="validation-invalid-label"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Section: Dispatch / Assignment -->
+        <hr />
+        <div class="row assigment">
+            <div class="col-lg-12">
+                <h5 class="fw-600 mb-3">Dispatch / Assignment</h5>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label asp-for="AssignedTechnicians" class="form-label fw-600"></label>
+                    <select asp-for="AssignedTechnicians" class="form-select">
+                        <option value="">-- Select Technician --</option>
+                        <option value="Technician1">Technician1</option>
+                        <option value="Technician2">Technician2</option>
+                        <option value="Technician3">Technician3</option>
+                    </select>
+                    <span asp-validation-for="AssignedTechnicians" class="validation-invalid-label"></span>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label asp-for="AssignedCrew" class="form-label fw-600">Assigned Crew / Department</label>
+                    <select asp-for="AssignedCrew" class="form-select">
+                        <option value="">-- Select --</option>
+                        <option>Leak Survey</option>
+                        <option>Meter Services</option>
+                        <option>Pipeline Integrity</option>
+                        <option>Other</option>
+                    </select>
+                    <span asp-validation-for="AssignedCrew" class="validation-invalid-label"></span>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label asp-for="SupervisorName" class="form-label fw-600">Supervisor / Approver Name</label>
+                    <select asp-for="SupervisorName" class="form-select">
+                        <option value="">-- Select --</option>
+                        <option>Bryan Young</option>
+                        <option>Joseph Tosta</option>
+                        <option>Phil Wallace</option>
+                    </select>
+                    <span asp-validation-for="SupervisorName" class="validation-invalid-label"></span>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label asp-for="DispatchStatusId" class="form-label fw-600">Dispatch Status</label>
+                    <select asp-for="DispatchStatusId" class="form-select">
+                        <option value="">-- Select --</option>
+                        <option value="1">Pending</option>
+                        <option value="2">Assigned</option>
+                        <option value="3">In Progress</option>
+                        <option value="4">Closed</option>
+                    </select>
+                    <span asp-validation-for="DispatchStatusId" class="validation-invalid-label"></span>
+                </div>
+            </div>
+
+            <hr />
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5 class="fw-600 mb-3">Upload Photo</h5>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="mb-3 form-group">
+                        <label asp-for="Photo" class="form-label fw-600">Problem Photo</label>
+                        <input asp-for="Photo" type="file" class="form-control" accept="image/*" />
+                        <span asp-validation-for="Photo" class="validation-invalid-label"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         @if ((User.IsInRole("SystemAdministrator") || User.IsInRole("SuperAdministrator")) && Model.Id > 0)
         {
             <div class="row">
@@ -172,6 +286,5 @@
         }
     </div>
 </div>
-
 
 <input type="hidden" asp-for="Id" />
