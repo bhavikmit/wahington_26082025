@@ -8,6 +8,15 @@
     function afterTabLoad(){}
 </script>
 
+<style>
+    .barcodeImg {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+</style>
+
+
 @* @await Html.PartialAsync("~/Views/Shared/Crud/Tabs/_Tabs.cshtml", tab) *@
 @await Html.PartialAsync("~/Views/Shared/Crud/ListView/DataTable/_Index.cshtml", Model)
 <div style="display:none;" id="hidden-asset-create-form-div">
