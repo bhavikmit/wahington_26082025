@@ -40,5 +40,12 @@ namespace Models
         [ForeignKey("MountType")]
         public long? MountTypeId { get; set; }
         public MountType? MountType { get; set; }
+
+        public long? AssetStatus { get; set; }
+        public long? Criticality { get; set; }
+        public long? Owner { get; set; }
+        public long? CostCenter { get; set; }
+        public string? Model { get; set; }
+        public string? SerialNumber { get; set; }
     }
 }
