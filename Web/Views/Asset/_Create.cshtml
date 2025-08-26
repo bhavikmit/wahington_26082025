@@ -36,6 +36,34 @@
                     <partial name="~/Views/Shared/Select2/_Condition.cshtml" for="Condition" />
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label class="form-label fw-600">Status</label>
+
+                    <select asp-for="AssetStatus" class="form-select" asp-items="@Html.GetEnumSelectList<AssetStatus>()">
+                        <option value="">-- Select --</option>
+                    </select>
+
+                   @*  <select class="form-select">
+                        <option>Active</option>
+                        <option>Inactive</option>
+                        <option>Repair</option>
+                        <option>Retired</option>
+                    </select> *@
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                   @*  <label class="form-label fw-600">Modal</label>
+                    <input type="text" class="form-control" value="Model-Pip-1" /> *@
+
+                    <label asp-for="Model" class="form-label fw-600"></label>
+                    <input asp-for="Model" type="text" class="form-control" />
+                    <span asp-validation-for="Model" class="validation-invalid-label"></span>
+
+                </div>
+            </div>
 
             <div class="col-lg-6">
                 <div class="mb-3 form-group">
@@ -88,6 +116,54 @@
                         <option value="">-- Select --</option>
                     </select>
                     <span asp-validation-for="NextMaintenanceYear" class="validation-invalid-label"></span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    @* <label class="form-label fw-600">Last Service Date</label>
+                    <select class="form-select">
+                        <option value="">-- Select --</option>
+                        <option value="1">1 years</option>
+                        <option value="2">2 years</option>
+                        <option value="3">5 years</option>
+                        <option value="4">10 years</option>
+                        <option value="5">15 years</option>
+                    </select>
+                    <span asp-validation-for="LastServiceDate" class="validation-invalid-label"></span> *@
+
+
+                    <label asp-for="AssetLastServiceDate" class="form-label fw-600"></label>
+                    <select asp-for="AssetLastServiceDate" class="form-select" asp-items="@Html.GetEnumSelectList<AssetLastServiceDate>()">
+                        <option value="">-- Select --</option>
+                    </select>
+                    <span asp-validation-for="AssetLastServiceDate" class="validation-invalid-label"></span>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label asp-for="AssetCriticality" class="form-label fw-600"></label>
+                    <select asp-for="AssetCriticality" class="form-select" asp-items="@Html.GetEnumSelectList<AssetCriticality>()">
+                        <option value="">-- Select --</option>
+                    </select>
+                    <span asp-validation-for="AssetCriticality" class="validation-invalid-label"></span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label asp-for="AssetOwner" class="form-label fw-600"></label>
+                    <select asp-for="AssetOwner" class="form-select" asp-items="@Html.GetEnumSelectList<AssetOwner>()">
+                        <option value="">-- Select --</option>
+                    </select>
+                    <span asp-validation-for="AssetOwner" class="validation-invalid-label"></span>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="mb-3 form-group">
+                    <label asp-for="SerialNumber" class="form-label fw-600"></label>
+                    <input asp-for="SerialNumber" class="form-control" />
+                    <span asp-validation-for="SerialNumber" class="validation-invalid-label"></span>
                 </div>
             </div>
 

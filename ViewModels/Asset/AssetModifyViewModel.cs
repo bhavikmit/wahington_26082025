@@ -52,5 +52,25 @@ namespace ViewModels
         public List<AssetAssociationDetailViewModel> AssetAssociations { get; set; } = new();
         public List<AssetTypeLevel1DetailViewModel> AssetTypeRadioButtonList { get; set; } = new();
         public List<DynamicColumnValueDetailViewModel> DynamicColumns { get; set; } = new();
+
+        [Display(Name = "Status", Prompt = "Asset Status")]
+        public AssetStatus? AssetStatus { get; set; }
+
+        [Display(Name = "Criticality", Prompt = "Asset Criticality")]
+        public AssetCriticality? AssetCriticality { get; set; }
+
+        [Display(Name = "Asset Owner", Prompt = "Asset Owner")]
+        public AssetOwner? AssetOwner { get; set; }
+
+        [Display(Name = "Asset Cost Center", Prompt = "Asset Cost Center")]
+        public AssetCostCenter? AssetCostCenter { get; set; }
+
+        public string? Model { get; set; }
+
+        [Display(Name = "Serial Number", Prompt = "Serial Number")]
+        public string? SerialNumber { get; set; }
+
+        [Display(Name = "Asset Last Service Date", Prompt = "Asset Last Service Date")]
+        public AssetLastServiceDate? AssetLastServiceDate { get; set; }
     }
 }
