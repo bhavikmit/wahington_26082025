@@ -14,9 +14,13 @@ namespace Models
         public string State { get; set; }
         public string? Zip { get; set; }
         public string Email { get; set; }
+
+        // Contact preferences
         public bool CallMe { get; set; }
         public bool EmailMe { get; set; }
         public bool NoNeedToContact { get; set; }
+
+        // Problem types
         public bool SideWalk { get; set; }
         public bool Potholes { get; set; }
         public bool Drainage { get; set; }
@@ -24,10 +28,27 @@ namespace Models
         public bool ParkwayTree { get; set; }
         public bool Other { get; set; }
         public string? Description { get; set; }
+
+        // Problem location
         public string? LocationOfProblem { get; set; }
         public string? DescriptionOfProblem { get; set; }
-        public SSRStatus? Status { get; set; }
 
+        // ✅ Safety / Regulatory
+        public bool GasOdorDetected { get; set; }
+        public bool EvacuationNeeded { get; set; }
+        public string? RespondersNotified { get; set; }
+        public string? RegulatoryStepCode { get; set; }
+
+        // ✅ Dispatch / Assignment
+        public string? AssignedTechnicians { get; set; }
+        public string? AssignedCrew { get; set; }
+        public string? SupervisorName { get; set; }
+        public int? DispatchStatusId { get; set; }
+
+        // ✅ Status
+        public SSRStatus? Status { get; set; } = SSRStatus.Open;
+
+        // Navigation
         public WorkOrder? WorkOrder { get; set; }
     }
 }
